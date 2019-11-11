@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Acá va el título o logo
 class Header extends React.Component {
     render() {
         return (

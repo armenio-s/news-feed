@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Card con la indo de la noticia
 class Card extends React.Component {
     render() {
         return (
