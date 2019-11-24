@@ -1,17 +1,37 @@
-import React from 'react';
-import Header from '../Components/header';
-//import Nav from '../Components/nav';
-//import Card from '../Components/cards';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Container from '@material-ui/core/Container'
+import { createGlobalStyle } from 'styled-components'
 
+import Header from '../Components/header'
+import Nav from '../Components/nav'
 
-class App extends React.Component {
-  render(){
+import Home from '../Pages/home'
+import Category from '../Pages/category'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
+`
+
+class App extends Component {
+  render() {
     return (
-      <>
-        <Header />
-      </>
-    );
+      <Router>
+        <GlobalStyle />
+        <Container maxWidth="md">
+          <Header />
+          <Nav />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/categorias/:category" exact component={Category} />
+          </Switch>
+        </Container>
+      </Router>
+    )
   }
 }
 
-export default App;
+export default App
+
