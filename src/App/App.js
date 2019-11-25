@@ -27,6 +27,7 @@ class App extends Component {
             <Route path="/" exact component={Home} />
             <Route path="/categorias/:category" exact component={Category} />
           </Switch>
+
         </Container>
       </Router>
     )

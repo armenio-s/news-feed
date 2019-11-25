@@ -3,7 +3,9 @@ import Grid from '@material-ui/core/Grid'
 import Skeleton from 'react-loading-skeleton'
 
 import Card from '../Components/cards'
-import api from '../Utils/newsApi'
+import NewsApi from '../Utils/newsApi'
+
+import Pagination from '../Components/pagination'
 
 class Home extends React.Component {
   state = {
@@ -13,9 +15,10 @@ class Home extends React.Component {
 
   async componentDidMount() {
     this.setState({ isLoading: true })
-    const latestNews = await api.latest()
+    const latestNews = await NewsApi.latest()
+    const latestNewsSliced = latestNews.slice(0, 15)
 
-    this.setState({ latestNews: latestNews.slice(0, 15), isLoading: false })
+    this.setState({ latestNews: latestNewsSliced, isLoading: false })
   }
 
   render() {
@@ -36,7 +39,9 @@ class Home extends React.Component {
               <Grid item xs={4} key={latestNew.news_id}>
                 <Card data={latestNew} />
               </Grid>
+              
             ))}
+            <Pagination latestNewsSliced={latestNews} latestNews={latestNews.length} />
         </Grid>
       </div>
     )

@@ -4,7 +4,7 @@ const BASE_URL = 'https://api.canillitapp.com'
 
 const getActualDate = () => dayjs().format('YYYY[-]MM[-]DD')
 
-const newsApi = {
+const NewsApi = {
   latest: async (date = getActualDate()) => {
     try {
       const response = await fetch(`${BASE_URL}/latest/${date}`)
@@ -27,5 +27,5 @@ const newsApi = {
   },
 }
 
-export default newsApi
+export default NewsApi
 

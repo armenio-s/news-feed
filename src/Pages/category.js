@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import Skeleton from 'react-loading-skeleton'
 
 import Card from '../Components/cards'
-import api from '../Utils/newsApi'
+import newsApi from '../Utils/newsApi'
 import { categoriesId } from '../Utils/constants'
 
 class Category extends React.Component {
@@ -23,17 +23,13 @@ class Category extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    console.log('desmonte la pagina Category')
-  }
-
   async fetchCategoriesNews() {
     const { category } = this.props.match.params
     const categoryId = categoriesId[category]
 
     this.setState({ isLoading: true })
 
-    const categoriesNews = await api.category(categoryId)
+    const categoriesNews = await newsApi.category(categoryId)
     this.setState({ categoriesNews: categoriesNews.slice(0, 15), isLoading: false })
   }
 
