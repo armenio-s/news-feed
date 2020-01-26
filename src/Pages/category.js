@@ -13,7 +13,7 @@ class Category extends React.Component {
   }
 
   componentDidMount() {
-    console.log('monte la pagina Category')
+
     this.fetchCategoriesNews()
   }
 
@@ -38,17 +38,17 @@ class Category extends React.Component {
 
     return (
       <div style={{ marginTop: '10px' }}>
-        <Grid container spacing={3} >
+        <Grid container spacing={4} >
           {isLoading &&
             Array.from({ length: 15 }, (_, index) => (
-              <Grid item sm={12} lg={4} key={index}>
-                <Skeleton width={282} height={337} />
+              <Grid item item xs={4} key={index}>
+                <Skeleton height={337} />
               </Grid>
             ))}
 
           {categoriesNews.length > 0 &&
             categoriesNews.map(latestNew => (
-              <Grid sm={12} lg={4} key={latestNew.news_id}>
+              <Grid item xs={4} key={latestNew.news_id}>
                 <Card data={latestNew} />
               </Grid>
             ))}

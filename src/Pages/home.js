@@ -26,11 +26,11 @@ class Home extends React.Component {
 
     return (
       <div style={{ marginTop: '10px' }}>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           {isLoading &&
             Array.from({ length: 15 }, (_, index) => (
               <Grid item xs={4} key={index}>
-                <Skeleton width={282} height={337} />
+                <Skeleton height={337} />
               </Grid>
             ))}
 
