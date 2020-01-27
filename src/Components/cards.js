@@ -70,14 +70,3 @@ function MediaCard({ data }) {
 
 export default MediaCard
 
-/*
-
-agregar url en las props de media card para volver a usar
-<CardActions>
-        <Button size="small" color="primary">
-          <a href={url} target="_blank">
-            Ver más
-          </a>
-        </Button>
-      </CardActions>
-      */
