@@ -12,7 +12,7 @@ const categoriesNames = Object.keys(categoriesId)
 
 const StyledTabs = styled(Tabs)`
     .MuiTabs-flexContainer {
-        margin-top: 96px;
+        margin-top: 70px;
     }
 ` 
 
